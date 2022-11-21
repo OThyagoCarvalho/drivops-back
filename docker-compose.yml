@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13    
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: drivops
+    networks:
+      - drivops
+  test-db:
+    image: postgres:13    
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: drivops
+    networks:
+      - drivops
+networks:
+  drivops:
+  
